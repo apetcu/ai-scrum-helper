@@ -1,0 +1,26 @@
+# Scrum Master AI Agent - Git Ignore
+
+# User-specific project context (contains project-specific configuration)
+scrum-master/PROJECT_CONTEXT.md
+
+# Logs and temporary files
+*.log
+*.tmp
+.DS_Store
+
+# IDE-specific files (user preferences)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code local settings (user-specific)
+.claude/settings.local.json
+
+# Node modules (if any tooling is added in the future)
+node_modules/
+
+# Environment files (if any secrets are used)
+.env
+.env.local
