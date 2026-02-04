@@ -25,10 +25,39 @@ This file is created during onboarding and contains all project-specific configu
 For all agile tasks, **follow the instruction playbooks** located in [scrum-master/playbooks/](../../scrum-master/playbooks/):
 
 1. **onboard.md** - Onboard to a new Jira project and Confluence space
-2. **sprint-health.md** - Analyze sprint health (stale tickets, scope creep, unpointed work)
+2. **sprint-health.md** - Analyze sprint health (stale tickets, scope creep, unpointed work, template compliance)
 3. **review-summary.md** - Generate stakeholder-ready sprint review summary
+4. **validate-templates.md** - Validate issues against team templates
+5. **create-issue.md** - Create template-compliant bugs, stories, and epics
 
 These playbooks provide step-by-step instructions for using MCP tools to accomplish each task.
+
+## Issue Templates
+
+**IMPORTANT**: When creating or discussing Jira issues, ALWAYS reference and follow the templates in [scrum-master/templates/](../../scrum-master/templates/):
+
+- **[bug-template.md](../../scrum-master/templates/bug-template.md)** - Bugs must include: steps to reproduce, expected/actual behavior, environment, priority
+- **[story-template.md](../../scrum-master/templates/story-template.md)** - Stories must include: user story format (As a/I want/So that), 2+ acceptance criteria, story points ≤13, epic link
+- **[epic-template.md](../../scrum-master/templates/epic-template.md)** - Epics must include: business objective, 2+ measurable metrics, scope (in/out), owner, dates
+
+### Creating Jira Issues
+
+When a user asks to create a bug, story, or epic:
+1. **Load the template** for that issue type first
+2. **Gather all required information** using the template as a checklist
+3. **Format the description** following the template structure
+4. **Validate** against template rules before creating
+5. **Use create-issue.md playbook** for step-by-step guidance
+
+Never create issues that violate templates - they will fail validation later.
+
+### Template Validation
+
+Template compliance is checked in:
+- `/health` command - Shows template violations in sprint health report
+- `/validate` command - Detailed validation report with actionable recommendations
+
+All issues should pass template validation (🟢 Perfect or 🟡 Good scores).
 
 ## MCP Tools
 

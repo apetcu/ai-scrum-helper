@@ -112,6 +112,27 @@ Our team agrees to:
 
 ---
 
+## Issue Templates
+
+Templates are defined in `scrum-master/templates/` and enforced during `/health` and `/validate` commands.
+
+### Template Enforcement
+- **Enabled**: Yes _(Set to "No" to skip template validation in health checks)_
+- **Strictness**: Medium _(Options: Strict, Medium, Relaxed)_
+  - **Strict**: Flag all template violations
+  - **Medium**: Flag only critical violations (default)
+  - **Relaxed**: Flag only the most severe violations
+
+### Template Customization
+The templates in `scrum-master/templates/` can be customized per team:
+- **Bug Template**: `scrum-master/templates/bug-template.md`
+- **Story Template**: `scrum-master/templates/story-template.md`
+- **Epic Template**: `scrum-master/templates/epic-template.md`
+
+Edit these files to match your team's specific requirements.
+
+---
+
 ## Configuration Notes
 
 ### Confluence Integration

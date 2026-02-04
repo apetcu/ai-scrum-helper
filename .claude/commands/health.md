@@ -2,7 +2,9 @@
 
 ## Description
 
-Analyze the active sprint to identify bottlenecks, stale tickets, scope creep, and unpointed work.
+Analyze the active sprint to identify bottlenecks, stale tickets, scope creep, unpointed work, and template compliance issues.
+
+[demo.png](https://postimg.cc/3kZyPZW9)
 
 ## Instructions
 
@@ -16,7 +18,8 @@ This playbook will guide you through:
 3. **Analyze Stale Tickets**: Identify issues with no movement in 3+ days
 4. **Detect Scope Creep**: Find items added after sprint started
 5. **Flag Unpointed Work**: Identify issues without story point estimates
-6. **Generate Report**: Create actionable markdown report with recommendations
+6. **Validate Templates**: Check issues against team templates (summary mode)
+7. **Generate Report**: Create actionable markdown report with recommendations
 
 ## Scrum Master Persona
 

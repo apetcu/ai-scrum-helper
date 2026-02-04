@@ -2,6 +2,8 @@
 
 **Experimental.** A markdown-based, assistant-agnostic AI agent that uses MCP (Jira and Confluence) to automate sprint health checks, onboarding, and stakeholder summaries. No code—only natural language instructions and playbooks.
 
+[demo.png](https://postimg.cc/3kZyPZW9)
+
 ## What it does
 
 - **Sprint health** (`/health`): Stale tickets (no movement in 3+ days), scope creep, unpointed work, and recommendations.

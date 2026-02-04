@@ -6,13 +6,14 @@ This playbook guides you through analyzing the active sprint to identify **bottl
 
 ## Overview
 
-The sprint health check consists of six main steps:
+The sprint health check consists of seven main steps:
 1. **Load Context**: Read configuration from PROJECT_CONTEXT.md
 2. **Fetch Active Sprint Issues**: Get all issues in the current sprint
 3. **Analyze Stale Tickets**: Identify issues with no movement in 3+ days
 4. **Detect Scope Creep**: Find items added after sprint started
 5. **Flag Unpointed Work**: Identify issues without story point estimates
-6. **Generate Report**: Create actionable markdown report with recommendations
+6. **Validate Templates**: Check issues against team templates (summary mode)
+7. **Generate Report**: Create actionable markdown report with recommendations
 
 ---
 
@@ -184,6 +185,37 @@ Total: 3 unpointed issues (13% of sprint) - Risk to velocity tracking
 
 ---
 
+## Step 5.5: Validate Issue Templates
+
+### Goal
+Check sprint issues against team templates to ensure quality and completeness.
+
+### Instructions
+
+1. **Run template validation (summary mode)**
+   - For each issue in the sprint, validate against templates in `scrum-master/templates/`
+   - Use summary mode: only report issues that are Poor (🔴) or Need Improvement (🟠)
+   - Skip Perfect (🟢) and Good (🟡) issues in the health check report
+
+2. **Group validation failures by severity**
+   - **Critical (🔴)**: Issues with multiple template violations
+   - **Needs Attention (🟠)**: Issues with 1-2 template violations
+
+3. **Focus on impact**
+   - Poorly-defined stories may lead to rework
+   - Bugs without reproduction steps can't be fixed
+   - Epics without success metrics can't be measured
+
+**Example analysis**:
+```
+Template Issues (Poor/Needs Improvement):
+- 🔴 PROJ-123: Missing acceptance criteria and story points
+- 🔴 PROJ-456: Bug with no reproduction steps
+- 🟠 PROJ-789: Story not linked to epic
+```
+
+---
+
 ## Step 6: Generate Report
 
 ### Goal
@@ -292,12 +324,34 @@ Use this template for the sprint health report:
 
 ---
 
+## 📋 Template Compliance (Summary)
+
+[If all issues follow templates]:
+> ✅ All issues are well-defined and follow team templates!
+
+[If template violations exist]:
+> **[N]** issues have template violations (poor or need improvement):
+
+| Key | Summary | Issue Type | Problems |
+|-----|---------|-----------|----------|
+| PROJ-123 | Add payment | Story | ❌ No acceptance criteria, ❌ No story points |
+| PROJ-456 | Login broken | Bug | ❌ No reproduction steps |
+| PROJ-789 | User analytics | Story | ⚠️ Not linked to epic |
+
+**Analysis**:
+- Poorly-defined stories may lead to rework during development
+- Bugs without reproduction steps are difficult to fix
+- Run `/validate` for detailed template validation report
+
+---
+
 ## 💡 Recommendations
 
 ### Immediate Actions (Next 24 hours)
 1. **Unblock stale work**: Schedule a 15-min sync with Alice to identify blockers on PROJ-123 and PROJ-456
 2. **Assign reviewers**: PROJ-789 needs a reviewer assigned - reach out to the team
 3. **Point unestimated work**: Quick estimation session for PROJ-345 and PROJ-678 (10 minutes)
+4. **Fix poorly-defined issues**: Update PROJ-123 and PROJ-456 to follow team templates (add ACs, reproduction steps)
 
 ### Short-term Actions (This week)
 1. **Review scope creep**: Discuss with Product Owner whether PROJ-567 should stay in sprint
