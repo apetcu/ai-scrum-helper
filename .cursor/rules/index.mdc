@@ -29,6 +29,11 @@ For all agile tasks, **follow the instruction playbooks** located in [scrum-mast
 3. **review-summary.md** - Generate stakeholder-ready sprint review summary
 4. **validate-templates.md** - Validate issues against team templates
 5. **create-issue.md** - Create template-compliant bugs, stories, and epics
+6. **module-onboarding.md** - Gather business context for a module from Confluence and Jira into `business/<module-name>.md`
+
+## Business Context
+
+When working on bugs or features for a specific module, **check if a business context file exists** at `business/<module-name>.md`. If it does, read it first to understand the full business logic, user flows, acceptance criteria, and past bugs before making changes. If it doesn't exist, suggest running `/module-onboarding` to gather context.
 
 These playbooks provide step-by-step instructions for using MCP tools to accomplish each task.
 
